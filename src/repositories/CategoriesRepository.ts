@@ -23,4 +23,12 @@ export class CategoriesRepository {
   
     this.categories.push(category)
   }
+
+  list(): Category[] {
+    return this.categories
+  }
+
+  findByName(name: string) {
+    return this.categories.some(category => category.name === name)
+  }
 }
